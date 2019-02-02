@@ -1,0 +1,44 @@
+<div class="bottom-box">
+  <div class="swiper-container" id="recommendListContainer">
+    <ul class="swiper-wrapper" id="recommendListBox">
+      <div class="swiper-slide">
+        <div class="item-box" node-type="callApp" doc-url="appIndex">
+          <div class="item-logo">
+            <div class="logo"></div>
+          </div>
+          <div class="item-cont">
+            上新浪体育，看全球热门赛事
+          </div>
+          <div class="iten-btn">
+            <span class="open-app">打开</span>
+          </div>
+        </div>
+      </div>
+    </ul>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination pagination2" style="bottom: 0;"></div>
+  </div>
+</div>
+<div class="bottom-box2"></div>
+<!-- 底部吸底推荐展示模板 -->
+<script id="bottonBoxTempl" type="text/x-dot-template">
+  <<~it:item:index>>
+  <div class="swiper-slide">
+  <div class="item-box" node-type="callApp" doc-url="<<=item.url>>">
+    <div class="item-logo">
+      <<? item.img>>
+         <div class="logo" style="width:1.14rem;height:0.75rem;background: url(<<=item.img >>) center center no-repeat;background-size: cover;"></div>
+         <<??>>
+         <div class="logo"></div>
+      <<?>>
+    </div>
+    <div class="item-cont">
+      <<=item.title >>
+    </div>
+    <div class="iten-btn">
+      <span class="open-app">打开</span>
+    </div>
+  </div>
+  </div>
+  <<~>>
+</script>

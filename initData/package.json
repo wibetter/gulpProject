@@ -1,0 +1,20 @@
+{
+  "name": "#projectName#",
+  "version": "1.0.0",
+  "description": "#projectName#项目描述",
+  "scripts": {
+    "dev": "node build/dev.js",
+    "test": "node build/test.js",
+    "build": "node build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.staff.sina.com.cn:ssfe/#projectName#.git"
+  },
+  "author": "your name",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulpProject": "git+ssh://git@git.staff.sina.com.cn:ssfe/gulpProject.git"
+  }
+}
