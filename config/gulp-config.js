@@ -59,6 +59,7 @@ var paramConfig = {
     text: simplifyConfig.fileDir.text || currentConfig.fileDir.text || "/**/*.txt",
     template: simplifyConfig.fileDir.template || currentConfig.fileDir.template || "/template/**/*.html",
   },
+  /*
   deploy: {  // 部署相关配置数据
     msg: simplifyConfig.deploy.msg || currentConfig.deploy.msg || '发布gulpProject', // 部署信息
     mail: simplifyConfig.deploy.mail || currentConfig.deploy.mail || 'liudan6@staff.sina.com.cn', // 邮箱地址，用于接收部署结果
@@ -67,6 +68,7 @@ var paramConfig = {
     maxCount: simplifyConfig.deploy.maxCount || currentConfig.deploy.maxCount || 300, // 一次上传最大文件数
     silent: returnValue(simplifyConfig.deploy.silent, currentConfig.deploy.silent, true), // 使用安静模式：使用了危险选项时不会有提示问题，
   },
+  */
   operate: {
     compress: returnValue(simplifyConfig.operate.compress, currentConfig.operate.compress, true), // 是否压缩js，以便线上调试代码
     rename: returnValue(simplifyConfig.operate.rename, currentConfig.operate.rename, true), // js是否重命名

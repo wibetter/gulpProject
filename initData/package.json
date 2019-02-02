@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.staff.sina.com.cn:ssfe/#projectName#.git"
+    "url": "git+ssh://git@github.com:yourGithub/#projectName#.git"
   },
   "author": "your name",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "gulpProject": "git+ssh://git@git.staff.sina.com.cn:ssfe/gulpProject.git"
+    "gulpProject": "git+ssh://git@github.com:wibetter/gulpProject.git"
   }
 }
