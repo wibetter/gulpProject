@@ -84,3 +84,11 @@ gulpProject.online();
 gulpProject create -template=default #目前只有default模板
 或者 gulpProject create
 ```
+
+## 使用注意事项：
+```bash
+1、自带的系统模板、项目配置文件和gulpProject的配置文件中的静态资源根路径默认是//ssfe.test.sina.com.cn，请将其改成自己的静态资源引用地址;
+2、使用gulpProject init -n yourProjectName 后，会生成默认的gulpProject配置文件，各位可以根据自己喜好进行调整;
+3、gulpProject将系统分成三个环境：本地开发环境、线上测试环境和线上正式环境，
+   其中最明显的区别是，不同的运行环境，项目的静态资源引用地址会被替换成相对应环境下的引用地址；
+```
