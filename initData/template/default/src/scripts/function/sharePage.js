@@ -130,7 +130,13 @@ define(['jQuery', 'doT', 'utils', 'ajaxUtil', 'wapCallNative', 'swiper', 'lazylo
       var link = $this.attr('doc-url');
       if (link && link !== '') {
         if (link == 'currentPage') {
-          location.href = window.PAGEDATA.universalLink + '&number=' + window.PAGEDATA.number;
+          var gotoLink = window.PAGEDATA.universalLink;
+          if (gotoLink.indexOf('?') > 0) {
+            gotoLink += '&number=' + window.PAGEDATA.number;
+          } else {
+            gotoLink += '?number=' + window.PAGEDATA.number;
+          }
+          location.href = gotoLink;
         } else if (link == 'appIndex') { // 呼起APP，打开APP首页
           location.href = window.PAGEDATA.appDownload + '?number=' + window.PAGEDATA.number;
         } else { // 根据当前指定url获取通用链接，呼起APP指定界面
@@ -254,7 +260,6 @@ define(['jQuery', 'doT', 'utils', 'ajaxUtil', 'wapCallNative', 'swiper', 'lazylo
                 el: '.pagination1',
               },
             })
-
           }
         }
       });
@@ -272,29 +277,22 @@ define(['jQuery', 'doT', 'utils', 'ajaxUtil', 'wapCallNative', 'swiper', 'lazylo
           var images = msg.data.image;
           $('#sharePicPoster').attr('src', images);
           var data = {
-
             playerRatio: (9/16),
-
             videoAttr: {
               preload: "auto",
               src: videoSrc,
             },
-
             playerIcon : {
               width : '50px',
               height : '50px'
             },
-
             duration: "02:31",
-
             poster: images,
-
             isAdsorb : true,
             autoHeight : true,
             shadowBg : true
 
-          }
-
+          };
           var apl = aPlayer.createPlayer(data);
         }
       });
