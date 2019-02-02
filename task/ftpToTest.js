@@ -8,21 +8,14 @@ const plugins = gulpLoadPlugins(),
   gutil = plugins.util,
 ftp = require('vinyl-ftp'); // 资源文件上传
 
-// 样式
-const chalk = require('chalk');
-
-const titleTip = function(msg){
-  return chalk.red(chalk.bold(msg));
-};
-
 module.exports = function () {
 
   if (!testServer.host || testServer.host == 'yourServerHost') {
-    titleTip('请配置ftp，host不能为空。');
+    console.log('提醒：请配置ftp，host不能为空。');
   } else if (!testServer.user || testServer.user == 'yourServerAccount') {
-    titleTip('请配置ftp，user账号不能为空。');
+    console.log('提醒：请配置ftp，user账号不能为空。');
   } else if (!testServer.password || testServer.password == 'yourServerPassword') {
-    titleTip('请配置ftp，password不能为空。');
+    console.log('提醒：请配置ftp，password不能为空。');
   } else {
     var conn = ftp.create({
       host: testServer.host,
