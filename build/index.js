@@ -78,9 +78,14 @@ let argv = yargs
       .reset()
       .usage(titleTip('Usage')+': $0 create [option]')
       .option('template',{
-        alias: 's',
+        alias: 't',
         describe: '指定系统模板名称',
         default: 'default',
+      })
+      .option('projectName',{
+        alias: 'n',
+        describe: '指定项目名称',
+        default: gulpconfig.base.projectName,
       })
       .alias('h', 'help')
   }, (argv) => {
@@ -91,7 +96,7 @@ let argv = yargs
         copy(path.resolve(__dirname, '../initData/template/'+argv.template+'/**'), path.resolve(process.cwd()), function(){
           // 更新模板中的系统名称
           gulp.src(path.resolve(process.cwd(), './**/*.html'), {base: path.resolve(process.cwd())})
-            .pipe(plugins.replace('#projectName#', gulpconfig.base.projectName))
+            .pipe(plugins.replace('#projectName#', argv.projectName))
             .pipe(gulp.dest(path.resolve(process.cwd())));
           console.log('系统模板：'+ argv.template +'创建成功');
         });
