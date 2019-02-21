@@ -9,7 +9,7 @@ const plugins = gulpLoadPlugins(),
 ftp = require('vinyl-ftp'); // 资源文件上传
 
 module.exports = function () {
-
+  console.log('testServer:'+testServer);
   if (!testServer.host || testServer.host == 'yourServerHost') {
     console.log('提醒：请配置ftp，host不能为空。');
   } else if (!testServer.user || testServer.user == 'yourServerAccount') {
