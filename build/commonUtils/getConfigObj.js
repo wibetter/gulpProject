@@ -21,7 +21,7 @@ module.exports = function(currentConfigDir) {
   };
   if (fileExists(currentConfigDir)) {
     const configObj = require(currentConfigDir);
-    if (configObj && configObj.base) {
+    if (configObj && (configObj.base || configObj.host)) {
       currentConfig = configObj;
     }
   }
