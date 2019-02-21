@@ -10,16 +10,19 @@ npm i -g git+ssh://git@github.com:wibetter/gulpProject.git
 ```
 
 ```bash
-#初始化项目配置
+#初始化项目配置(需要先进入指定项目根目录)
 gulpProject init -n=yourProjectName
 
 #或者：使用精简配置初始化项目
 gulpProject init -n=yourProjectName --isSimplify=true
+
+#初始化项目配置后即可得到gulpProject的默认配置文件，您也可以根据项目需要自行更改gulpProject配置文件
 ```
 
 - **示例：以全局命令方式构建项目**
 
 ```bash
+# 初始化项目配置后就可以开始构建您的项目前端代码了
 # 1、以本地开发环境编译代码
 在命令窗口输入：gulpProject dev
 
@@ -40,7 +43,7 @@ npm i -g git+ssh://git@github.com:wibetter/gulpProject.git
 ```
 
 ```bash
-#初始化项目配置
+#初始化项目配置（同方法一）
 gulpProject init -n=yourProjectName
 
 #或者：使用精简配置初始化项目
@@ -78,10 +81,14 @@ gulpProject.test();
 gulpProject.online();
 ```
 
+
 - **创建系统模板**
 
 ```bash
+# gulpProject自带一套前端项目代码模板，以便用户参考使用
+
 gulpProject create -template=default #目前只有default模板
+
 或者 gulpProject create
 ```
 
