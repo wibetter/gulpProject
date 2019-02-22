@@ -102,6 +102,7 @@ let argv = yargs
         });
       } else {
         console.log('找不到'+ argv.template +'系统模块');
+        process.exit();
       }
     });
   })
