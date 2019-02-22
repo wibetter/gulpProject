@@ -11,8 +11,10 @@ ftp = require('vinyl-ftp'); // 资源文件上传
 module.exports = function () {
   if (!testServer.host || testServer.host == 'yourServerHost') {
     console.log('提醒：请配置ftp，host不能为空。');
+    process.abort();
   } else if (!testServer.user || testServer.user == 'yourServerAccount') {
     console.log('提醒：请配置ftp，user账号不能为空。');
+    process.exit();
   } else if (!testServer.password || testServer.password == 'yourServerPassword') {
     console.log('提醒：请配置ftp，password不能为空。');
   } else {
