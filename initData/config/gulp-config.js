@@ -45,11 +45,11 @@ module.exports = {
   },
   operate: {
     compress: true, // 是否压缩js，以便线上调试代码
-    rename: true, // js是否重命名
+    rename: true, // js/css是否重命名
     html: {
-    minifyJS: false, // 压缩页面JS
+      minifyJS: false, // 压缩页面JS
       minifyCSS: true, // 压缩页面CSS
-  }
-},
+    }
+  },
 };
 
