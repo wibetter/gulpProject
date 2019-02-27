@@ -14,7 +14,7 @@ const gulp = require('gulp'),
 
 module.exports = function () {
   var currentVersion = config.base.version;
-  currentVersion = currentVersion.substring(('-v' + pkg.version || '0.1.1' + '.').length);
+  currentVersion = currentVersion.substring(('-v' + (pkg.version || '0.1.1') + '.').length);
   // 将源代码中的#version#改成对应的版本号
   return gulp.src(config.base.dist + '/**', {base: config.base.dist})
     .pipe(plugins.replace('#version#', currentVersion))

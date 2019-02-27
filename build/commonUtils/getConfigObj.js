@@ -11,7 +11,7 @@ const fileExists = function(fileDir) {
 
 
 module.exports = function(currentConfigDir) {
-  let currentConfig = {
+  let currentConfig, defaultConfig = {
     base: {},
     fileDir: {},
     deploy: {},
@@ -24,6 +24,9 @@ module.exports = function(currentConfigDir) {
     if (configObj && (configObj.base || configObj.host)) {
       currentConfig = configObj;
     }
+  }
+  if (!currentConfig) {
+    currentConfig = defaultConfig;
   }
   return currentConfig;
 };
