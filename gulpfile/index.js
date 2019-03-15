@@ -121,6 +121,7 @@ module.exports = {
     del([config.base.dist + '/**', 'rev/**', 'zip/**']).then(() => {
       console.log(config.base.dist + '/目录下的文件已清空，\n');
       plugins.sequence(['jsmin', 'cssmin', 'imgmin', 'htmlmin','configmin'],
+        'switchOnlineConfig',
         'fileinclude',
         'fileIncludeSrcJS',
         ['updateCssVersion','updateJsVersion','updateHtmlVersion'],
