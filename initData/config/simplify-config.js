@@ -16,14 +16,14 @@ module.exports = {
     src: 'src', // 项目源代码目录
     dist: 'dist', // 项目编译后的代码存放目录
     projectName: '#projectName#', // 当前项目名称
-    assetsRoot: '//ssfe.test.sina.com.cn', // 源代码静态资源引用根地址【临时】
+    assetsRoot: '//goodtool666.cn', // 源代码静态资源引用根地址【临时】
     assetsSubDirectory: '/sports/webSystem/#projectName#', // 本地开发环境的项目存放路径
     testSubDirectory: '/sports/webSystem/#projectName#', // 线上测试环境的项目存放路径
     onlineSubDirectory: '/ssfe/sports/#projectName#', // 线上正式环境的项目存放路径
     version: '-v' + pkg.version + '.20190118.01', // 项目版本号
     indexHtml:  '/pages/index.html', // 默认打开的页面路径[如果填写的页面地址则不打开]
     devDomain:  path.resolve(process.cwd(), 'dist').replace(/\\/g, '/'),// 本地开发测试域名
-    testDomain: '//ssfe.test.sina.com.cn', // 线上测试域名
+    testDomain: '//goodtool666.cn', // 线上测试域名
     onlineDomain: '//e.sinaimg.cn', // 正式资源域名
   },
   fileDir: {  // 各类文件存放路径正则
@@ -34,6 +34,16 @@ module.exports = {
     sass: "/sass/**/*.scss",
     image: "/images/**/*",
     html: "/pages/**/*.html",
+  },
+  ftpConfig: { // 线上测试服务器配置
+    host:     '10.41.41.73', // 默认 '10.210.227.108'
+    user:     'sinas',
+    password: 'sinasports',
+    remoteSubDirectory: '/sports/webSystem/#projectName#', // 线上测试环境的项目存放路径，与base.testSubDirectory保持一致,
+  },
+  deploy: { // 部署相关配置数据
+    'msg': '发布#projectName#', // 部署信息
+    'mail': 'liudan6@staff.sina.com.cn' // 邮箱地址，用于接收部署结果
   },
   operate: {
     compress: true, // 是否压缩js，以便线上调试代码

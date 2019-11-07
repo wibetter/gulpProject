@@ -11,14 +11,7 @@ const fileExists = function(fileDir) {
 
 
 module.exports = function(currentConfigDir) {
-  let currentConfig, defaultConfig = {
-    base: {},
-    fileDir: {},
-    deploy: {},
-    operate: {
-      html: {}
-    }
-  };
+  let currentConfig, defaultConfig = {};
   if (fileExists(currentConfigDir)) {
     const configObj = require(currentConfigDir);
     if (configObj && (configObj.base || configObj.host)) {

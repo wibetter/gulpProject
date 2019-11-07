@@ -3,11 +3,30 @@
 <head>
   <title>元气少女惠若琪助威中国女排</title>
   @@include('h5/headerLink.html')
-  <link rel="stylesheet" href="//ssfe.test.sina.com.cn/sports/webSystem/#projectName#/src/css/article_v5.css?v=#version#">
+  <link rel="stylesheet" href="//goodtool666.cn/sports/webSystem/gulpProject/src/css/article_v5.css?v=#version#">
   <script type="text/javascript">
-    @JsSrcinclude('data/page-config.js')
-  </script>
-  <script type="text/javascript">
+    var PAGEDATA = {
+      number: 'wm23900_0012', // 客户端分享渠道
+      page: 0, // 推荐分页：默认取第一页
+      page_size: 15, // 推荐分页：默认取一页取15个
+      // 项目根地址（静态资源引用根地址）：require-config.js 的baseUrl引用此变量
+      projectBase: '//goodtool666.cn/sports/webSystem/gulpProject/src',
+      /* 相关推荐的参数 */
+      cateid: '2L', // 栏目列表
+      cre: 'sptapp', // 这两个参数主要用于描述产品位，需要statics=1激活这两个参数
+      mod: 'r',
+      merge: 3, // 显示推荐原因
+      statics: 1,
+      this_page: 1, // 是否过滤当前页
+      rfunc: 105, // 应用场景参数
+      app_type: 112, // 客户端类型: 110-新闻app，111-财经app，112-体育app
+      /* 以上是相关推荐的参数 */
+      isMore: true, // 相关推荐是否还有更多数据
+      // app下载页
+      appDownload: 'https://tale.sports.sina.com.cn/ios/appDownload.htm',
+      // 通用链接
+      universalLink: 'https://tale.sports.sina.com.cn/ios/appDownload.htm',
+    };
     // 正文统一文档信息配置（以下数据由后端渲染）
     var __pageConfig = {
       __domain: 'sports',//文档所在域名
@@ -333,7 +352,7 @@
     <p class="picture-txt">2018年2月9日，韩国平昌，2018平昌冬奥会开幕式。(图片来源:VCG)</p>
 
     <!--详情 -->
-    <div class="btn-detail" node-type="btnShow">
+    <div class="btn-detail" node-type="btnShow" suda-uatrack="key=mid&amp;value=content_more">
       <img src="//n.sinaimg.cn/sports/imgStore/appSharePage/more.svg" style="top: 5px;">
     </div>
     <!--详情end -->
@@ -342,7 +361,8 @@
   <!-- 图集 e -->
 
   <!--正文_e-->
-  <div class="page2native_btn" node-type="callApp" doc-url="currentPage">打开APP阅读全文</div>
+  <div class="page2native_btn" node-type="callApp" doc-url="currentPage"
+       suda-uatrack="key=mid&value=open">打开APP阅读全文</div>
 </section>
 
 <div id="wx_pic" style="margin:0 auto;display:none;">
@@ -361,7 +381,8 @@
       <div class="swiper-pagination pagination1" style="bottom: 0;" id="cmnt-pagination"></div>
     </div>
 
-    <div class="cmnt-more cmnt-more-btn" node-type="callApp" doc-url="currentPage">查看更多评论</div>
+    <div class="cmnt-more cmnt-more-btn" node-type="callApp" doc-url="currentPage"
+         suda-uatrack="key=mid&value=comment_more">查看更多评论</div>
     <!-- 没有评论时，‘查看更多评论’改成‘立即发表评论’ -->
   </div>
 </section>
@@ -382,8 +403,8 @@
 <script type="text/javascript">
   @JsSrcinclude('config/api-list.js')
 </script>
-<script type="text/javascript" src="//ssfe.test.sina.com.cn/sports/webSystem/#projectName#/src/scripts/lib/require.min.js"></script>
-<script type="text/javascript" src="//ssfe.test.sina.com.cn/sports/webSystem/#projectName#/src/scripts/config/require-config.js"></script>
-<script type="text/javascript" src="//ssfe.test.sina.com.cn/sports/webSystem/#projectName#/src/scripts/h5/picture.js?v=#version#"></script>
+<script type="text/javascript" src="//goodtool666.cn/sports/webSystem/gulpProject/src/scripts/lib/require.min.js"></script>
+<script type="text/javascript" src="//goodtool666.cn/sports/webSystem/gulpProject/src/scripts/config/require-config.js"></script>
+<script type="text/javascript" src="//goodtool666.cn/sports/webSystem/gulpProject/src/scripts/h5/picture.js?v=#version#"></script>
 </body>
 </html>

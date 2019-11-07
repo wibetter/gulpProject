@@ -95,6 +95,12 @@ gulpProject create -template=default #目前只有default模板
 或者 gulpProject create
 ```
 
+- **输出当前项目配置文件**
+
+```bash
+gulpProject inspect #将当前项目配置文件输出到current-gulp-config.js中，以便检查当前配置是否正常。
+```
+
 ## 使用注意事项：
 ```bash
 1、自带的系统模板、项目配置文件和gulpProject的配置文件中的静态资源根路径默认是//ssfe.test.sina.com.cn，请将其改成自己的静态资源引用地址;

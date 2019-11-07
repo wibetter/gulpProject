@@ -16,9 +16,11 @@ const createDefaultConfig = function(isSimplify, projectName) {
       path.resolve(process.cwd(), 'config/simplify-config.js'), projectName);
   } else { // 创建完整版项目配置文件
     createFile(path.resolve(__dirname, '../initData/config/gulp-config.js'),
-      path.resolve(process.cwd(), 'config/gulp-config.js'), projectName);
+      path.resolve(process.cwd(), 'gulp-config.js'), projectName);
+    /* 注：server-test-config.js配置数据合并到gulp-config.js中
     createFile(path.resolve(__dirname, '../initData/config/server-test-config.js'),
-      path.resolve(process.cwd(), 'config/server-test-config.js'), projectName);
+      path.resolve(process.cwd(), 'server-test-config.js'), projectName);
+    */
   }
 
   // 创建package.json

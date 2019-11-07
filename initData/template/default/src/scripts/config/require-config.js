@@ -45,6 +45,7 @@ var _require_config = {
     'sharePage': ['jQuery'],
     'aplayer': ['jQuery'],
     'lazyload': ['jQuery'],
+    'aplayer': ['jQuery'],
   },
   waitSeconds: 0,
   urlArgs: 'v=#version#',

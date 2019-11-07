@@ -186,6 +186,7 @@
       if( done ){
         cb( _wx );
       } else {
+
         // 如果有 require 用 require 来加载
         if( typeof define === 'function' && typeof require === 'function' && define.amd ) {
           require( alljs , function( config, wx) {

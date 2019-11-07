@@ -14,9 +14,15 @@ const getConfigObj = require('../build/commonUtils/getConfigObj.js');
 /* 获取当前项目的构建配置文件 */
 const currentServerConfig = getConfigObj(path.resolve(process.cwd(), 'config/server-test-config.js'));
 
-module.exports = {
-  host:     currentServerConfig.host || 'yourServerHost',
-  user:     currentServerConfig.user || 'yourServerAccount',
-  password: currentServerConfig.password || 'yourServerPassword',
-  remoteSubDirectory: currentServerConfig.remoteSubDirectory || gulpconfig.base.testSubDirectory,
+var defaultConfig = {
+  host:    '10.41.41.73', // 默认 '10.210.227.108'
+  user:     'sinas',
+  password: 'sinasports',
+  remoteSubDirectory: gulpconfig.base.testSubDirectory,
+  port: '21'
 };
+
+// 整合currentServerConfig配置数据
+const paramConfig = Object.assign({}, defaultConfig, currentServerConfig);
+
+module.exports = paramConfig;

@@ -1,6 +1,10 @@
 // 引入gulp配置文件
-const config = require('../config/gulp-config.js'),
-  testServer = require('../config/server-test-config.js');
+const config = require('../config/gulp-config.js');
+let testServer = require('../config/server-test-config.js');
+
+if (config.ftpConfig) {
+  testServer = config.ftpConfig;
+}
 
 const gulp = require('gulp'),
   gulpLoadPlugins = require('gulp-load-plugins');
@@ -23,6 +27,7 @@ module.exports = function () {
       host: testServer.host,
       user: testServer.user,
       password: testServer.password,
+      port: testServer.port || '21',
       parallel: 10,
       log: gutil.log
     });

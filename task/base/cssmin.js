@@ -17,10 +17,10 @@ module.exports = function () {
 
   if (config.operate.rename) {
     return  gulp.src([config.srcFileDir('css'), '!' + config.srcFileDir('cssLib')], {base: config.base.src})
-      //.pipe(plugins.csslint())
-      // .pipe(plugins.autoprefixer())
-      // .pipe(plugins.csscomb())
-      // .pipe(plugins.csso())
+    //.pipe(plugins.csslint())
+    // .pipe(plugins.autoprefixer())
+    // .pipe(plugins.csscomb())
+    // .pipe(plugins.csso())
       .pipe(plugins.cssimport())
       .on('error', function(err) {
         gutil.log(gutil.colors.red('[Error]'), err.toString());

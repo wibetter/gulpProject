@@ -1,7 +1,11 @@
 // 引入gulp配置文件
 const config = require('../config/gulp-config.js');
-const del = require('del');
 
+// 引入node功能模块
+const del = require('del');
+const ora = require('ora');
+
+// 引入gulp相关模块
 const gulp = require('gulp'),
   gulpLoadPlugins = require('gulp-load-plugins'),
   plugins = gulpLoadPlugins();
@@ -17,9 +21,9 @@ gulp.task("autowatch", function () {
 
 gulp.task('cssmin', ['sass'], require('../task/base/cssmin.js'));
 
-gulp.task('imgmin', require('../task/base/imgmin.js'));
-
 gulp.task('jsmin', require('../task/base/jsmin.js'));
+
+gulp.task('imgmin', require('../task/base/imgmin.js'));
 
 gulp.task('configmin', require('../task/base/configmin.js'));
 
@@ -79,10 +83,18 @@ gulp.task('openOnline', require('../task/open/openOnline.js'));
 // 打包编译后的代码，以便传输和自动部署
 gulp.task('zip', require('../task/zip.js'));
 
+// 将线上环境的代码部署到新浪云存储中
+gulp.task('deploy', require('../task/deploy.js'));
+
 module.exports = {
   dev: function() {
+    const spinner = ora('[本地开发环境]开始编译').start();
+    spinner.text = '[本地开发环境]开始清空'+ config.base.dist + '/中的文件...';
     del([config.base.dist + '/**', 'rev/**']).then(() => {
-      console.log(config.base.dist + '/目录下的文件已清空，\n');
+      spinner.text = '[本地开发环境]已清空'+ config.base.dist + '/中的文件\n';
+      setTimeout(function(){
+        spinner.text = '[本地开发环境]编译源代码...\n';
+      }, 1000);
       plugins.sequence(
         ['imgmin', 'jsmin', 'cssmin', 'htmlmin','configmin'],
         'fileinclude',
@@ -94,13 +106,20 @@ module.exports = {
         'switchVersion',
         'switchDev',
         'openDev')(function(){
-        console.log('本地开发环境下，编译成功');
-      })
+          spinner.succeed('[本地开发环境]源代码完成编译！\n');
+        })
     });
   },
   test: function() {
+    console.log('[线上开发环境]开始编译');
+    const spinner = ora('[线上开发环境]开始编译').start();
+    spinner.text = '[线上开发环境]开始清空'+ config.base.dist + '/中的文件...';
+
     del([config.base.dist + '/**', 'rev/**']).then(() => {
-      console.log(config.base.dist + '/目录下的文件已清空，\n');
+      spinner.text = '[线上开发环境]已清空'+ config.base.dist + '/中的文件\n';
+      setTimeout(function(){
+        spinner.text = '[线上开发环境]编译源代码...\n';
+      }, 1000);
       plugins.sequence(
         ['cssmin', 'jsmin', 'imgmin', 'htmlmin', 'configmin'],
         'fileinclude',
@@ -113,14 +132,20 @@ module.exports = {
         'switchTest',
         'ftpToTest',
         'openTest')(function(){
-        console.log('线上开发环境下，编译成功');
+        spinner.succeed('[线上开发环境]源代码完成编译！\n');
       })
     });
   },
   online: function() {
+    console.log('[线上正式环境]开始编译');
+    const spinner = ora('[线上正式环境]开始编译').start();
+    spinner.text = '[线上正式环境]开始清空'+ config.base.dist + '/中的文件...';
     del([config.base.dist + '/**', 'rev/**', 'zip/**']).then(() => {
-      console.log(config.base.dist + '/目录下的文件已清空，\n');
-      plugins.sequence(['jsmin', 'cssmin', 'imgmin', 'htmlmin','configmin'],
+      spinner.text = '[线上正式环境]已清空'+ config.base.dist + '/中的文件\n';
+      setTimeout(function(){
+        spinner.text = '[线上正式环境]编译源代码...\n';
+      }, 1000);
+      plugins.sequence(['jsmin', 'cssmin', 'htmlmin','configmin', 'imgmin'],
         'switchOnlineConfig',
         'fileinclude',
         'fileIncludeSrcJS',
@@ -131,9 +156,9 @@ module.exports = {
         'switchVersion',
         'switchOnline',
         'openOnline',
-        'zip')(function(){
-        console.log('线上正式环境下，编译成功');
-      })
+        'zip')(function(){  // 去掉自动部署工具（仅限公司内网使用）
+          spinner.succeed('[线上正式环境]源代码完成编译！\n');
+        })
     });
   }
 };

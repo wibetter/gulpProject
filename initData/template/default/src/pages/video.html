@@ -3,12 +3,31 @@
 <head>
   <title>视频-富力TV深入拍摄 小雷在广州的幸福生活（上）</title>
   @@include('h5/headerLink.html')
-  <link rel="stylesheet" href="//ssfe.test.sina.com.cn/sports/webSystem/#projectName#/src/css/article_v5.css?v=#version#">
-  <link rel="stylesheet" href="//ssfe.test.sina.com.cn/sports/webSystem/#projectName#/src/css/aplayer.css?v=#version#">
+  <link rel="stylesheet" href="//goodtool666.cn/sports/webSystem/gulpProject/src/css/article_v5.css?v=#version#">
+  <link rel="stylesheet" href="//goodtool666.cn/sports/webSystem/gulpProject/src/css/aplayer.css?v=#version#">
   <script type="text/javascript">
-    @JsSrcinclude('data/page-config.js')
-  </script>
-  <script type="text/javascript">
+    var PAGEDATA = {
+      number: 'wm23900_0012', // 客户端分享渠道
+      page: 0, // 推荐分页：默认取第一页
+      page_size: 15, // 推荐分页：默认取一页取15个
+      // 项目根地址（静态资源引用根地址）：require-config.js 的baseUrl引用此变量
+      projectBase: '//goodtool666.cn/sports/webSystem/gulpProject/src',
+      /* 相关推荐的参数 */
+      cateid: '2L', // 栏目列表
+      cre: 'sptapp', // 这两个参数主要用于描述产品位，需要statics=1激活这两个参数
+      mod: 'r',
+      merge: 3, // 显示推荐原因
+      statics: 1,
+      this_page: 1, // 是否过滤当前页
+      rfunc: 105, // 应用场景参数
+      app_type: 112, // 客户端类型: 110-新闻app，111-财经app，112-体育app
+      /* 以上是相关推荐的参数 */
+      isMore: true, // 相关推荐是否还有更多数据
+      // app下载页
+      appDownload: 'https://tale.sports.sina.com.cn/ios/appDownload.htm',
+      // 通用链接
+      universalLink: 'https://tale.sports.sina.com.cn/ios/appDownload.htm',
+    };
     // 正文统一文档信息配置
     var __pageConfig = {
       __domain: 'sports',//文档所在域名
@@ -30,7 +49,8 @@
   <div class="video-top-box">
     <div class="video-top-play aplayer" data-aplayer='aplayer'></div>
   </div>
-  <div class="page2native_btn more-video" node-type="callApp" doc-url="currentPage">打开新浪体育，观看更多精彩视频</div>
+  <div class="page2native_btn more-video" node-type="callApp" doc-url="currentPage"
+     suda-uatrack="key=mid&value=open">打开新浪体育，观看更多精彩视频</div>
 
   <!--标题_s-->
   <h1 class="art_tit_h1">视频-富力TV深入拍摄 小雷在广州的幸福生活（上）</h1>
@@ -75,8 +95,8 @@
 <script type="text/javascript">
   @JsSrcinclude('config/api-list.js')
 </script>
-<script type="text/javascript" src="//ssfe.test.sina.com.cn/sports/webSystem/#projectName#/src/scripts/lib/require.min.js"></script>
-<script type="text/javascript" src="//ssfe.test.sina.com.cn/sports/webSystem/#projectName#/src/scripts/config/require-config.js"></script>
-<script type="text/javascript" src="//ssfe.test.sina.com.cn/sports/webSystem/#projectName#/src/scripts/h5/video.js?v=#version#"></script>
+<script type="text/javascript" src="//goodtool666.cn/sports/webSystem/gulpProject/src/scripts/lib/require.min.js"></script>
+<script type="text/javascript" src="//goodtool666.cn/sports/webSystem/gulpProject/src/scripts/config/require-config.js"></script>
+<script type="text/javascript" src="//goodtool666.cn/sports/webSystem/gulpProject/src/scripts/h5/video.js?v=#version#"></script>
 </body>
 </html>

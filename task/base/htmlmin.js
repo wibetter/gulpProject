@@ -3,7 +3,8 @@ const config = require('../../config/gulp-config.js');
 
 const gulp = require('gulp'),
   gulpLoadPlugins = require('gulp-load-plugins'),
-  plugins = gulpLoadPlugins();
+  plugins = gulpLoadPlugins(),
+  gutil = plugins.util;
 
 module.exports = function () {
   var options = {
@@ -15,5 +16,8 @@ module.exports = function () {
   };
   return gulp.src([config.srcFileDir('html'),config.srcFileDir('template')], {base: config.base.src})
     .pipe(plugins.htmlmin(options))
+    .on('error', function(err) {
+      gutil.log(gutil.colors.red('[Error]'), err.toString());
+    })
     .pipe(gulp.dest(config.base.dist));
 };

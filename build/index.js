@@ -9,6 +9,7 @@ const yargs = require('yargs');
 
 // 引入本地脚本模块
 const gulpProjectInit = require('../build/initAction.js');
+const inspect = require('../build/inspect.js');
 const gulpfile = require('../gulpfile/index.js');
 const gulpconfig = require('../config/gulp-config.js');
 
@@ -73,19 +74,22 @@ let argv = yargs
   }, (argv) => {
     gulpfile.online();
   })
+  .command('inspect', '输出当前配置文件', (yargs) => {
+    yargs
+      .reset()
+      .usage(titleTip('Usage')+': $0 online')
+      .alias('h', 'help')
+  }, (argv) => {
+    inspect();
+  })
   .command('create [option]', '创建系统模板', (yargs) => {
     yargs
       .reset()
       .usage(titleTip('Usage')+': $0 create [option]')
       .option('template',{
-        alias: 't',
+        alias: 's',
         describe: '指定系统模板名称',
         default: 'default',
-      })
-      .option('projectName',{
-        alias: 'n',
-        describe: '指定项目名称',
-        default: gulpconfig.base.projectName,
       })
       .alias('h', 'help')
   }, (argv) => {
@@ -95,8 +99,8 @@ let argv = yargs
       if (exist) {
         copy(path.resolve(__dirname, '../initData/template/'+argv.template+'/**'), path.resolve(process.cwd()), function(){
           // 更新模板中的系统名称
-          gulp.src(path.resolve(process.cwd(), './src/**'), {base: path.resolve(process.cwd())})
-            .pipe(plugins.replace('#projectName#', argv.projectName))
+          gulp.src(path.resolve(process.cwd(), './**/*.html'), {base: path.resolve(process.cwd())})
+            .pipe(plugins.replace('#projectName#', gulpconfig.base.projectName))
             .pipe(gulp.dest(path.resolve(process.cwd())));
           console.log('系统模板：'+ argv.template +'创建成功');
         });
