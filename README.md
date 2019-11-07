@@ -16,6 +16,9 @@ gulpProject init -n=yourProjectName
 #或者：使用精简配置初始化项目
 gulpProject init -n=yourProjectName --isSimplify=true
 
+#或者也可以自建gulpProject配置文件
+目前gulpProject默认从当前项目的config目录中读取gulp-config.js作为gulpProject的配置文件
+
 #初始化项目配置后即可得到gulpProject的默认配置文件，您也可以根据项目需要自行更改gulpProject配置文件
 ```
 
