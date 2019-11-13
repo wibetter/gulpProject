@@ -2,7 +2,7 @@
 const config = require('../config/gulp-config.js');
 let testServer = require('../config/server-test-config.js');
 
-if (config.ftpConfig) {
+if ((!testServer || !testServer.host) && config.ftpConfig) {
   testServer = config.ftpConfig;
 }
 
