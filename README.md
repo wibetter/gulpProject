@@ -98,7 +98,7 @@ gulpProject.online();
 
 ### 三、gulpProject提供的其他方法
 
-- **3.1、创建系统模板**
+- **3.1、创建系统模板**  
 注：gulpProject自带一套前端项目代码模板，以便用户参考使用
 
 ```bash
