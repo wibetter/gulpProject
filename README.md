@@ -4,17 +4,17 @@
 
 笔者留言：本人主要用gulpProject管理requireJs/jQuery等老技术栈的前端项目代码。
 
-### 使用方法一：以命令行方式使用gulpProject
+### 一、使用方法一：以命令行方式使用gulpProject
 注：此方式可用于同时管理多个前端项目代码
 
-- **全局安装**
+- **1、全局安装**
 
 ```bash
 #安装
 $ npm i -g git+ssh://git@github.com:wibetter/gulpProject.git
 ```
 
-- **初始化项目配置(需要先进入指定项目根目录)**
+- **2、初始化项目配置(需要先进入指定项目根目录)**
 
 ```bash
 $ gulpProject init -n=yourProjectName
@@ -29,7 +29,7 @@ $ gulpProject init -n=yourProjectName --isSimplify=true
 2. 初始化项目配置后即可得到gulpProject的默认配置文件，您也可以根据项目需要自行更改gulpProject的对应配置文件。
 
 
-- **示例：以全局命令方式构建项目**
+- **3、示例：以全局命令方式构建项目**
 
 初始化项目配置后就可以开始构建您的项目前端代码了
 
@@ -49,10 +49,10 @@ $ gulpProject test
 $ gulpProject online
 ```
 
-### 使用方法二：以插件方式使用gulpProject
+### 二、使用方法二：以插件方式使用gulpProject
 注：只作用于当前项目
 
-- **1、全局安装gulpProject**
+- **2.1、全局安装gulpProject**
 注：需要先全局安装gulpProject，用于生成gulpProject的默认配置文件，
 如果准备自建gulpProject的配置文件，可以不用全局安装。
 
@@ -60,19 +60,19 @@ $ gulpProject online
 $ npm i -g git+ssh://git@github.com:wibetter/gulpProject.git
 ```
 
-- **2、初始化项目配置（同方法一）**
+- **2.2、初始化项目配置（同方法一）**
 
 ```bash
 $ gulpProject init -n=yourProjectName
 ```
 
-- **3、本地安装**
+- **2.3、本地安装**
 
 ```bash
 $ npm i git+ssh://git@github.com:wibetter/gulpProject.git --save-dev
 ```
 
-- **4、gulpProject提供的本地执行命令**
+- **2.4、gulpProject提供的本地执行命令**
 
 ```bash
 # 以本地开发环境编译代码
@@ -83,7 +83,7 @@ $ npm run test;
 $ npm run build;
 ```
 
-- **5、采用插件方式引用（示例）**
+- **2.5、采用插件方式引用（示例）**
 
 ```bash
 // 引入gulpProject
@@ -96,9 +96,9 @@ gulpProject.test();
 gulpProject.online();
 ```
 
-### gulpProject提供的其他方法
+### 三、gulpProject提供的其他方法
 
-- **1、创建系统模板**
+- **3.1、创建系统模板**
 注：gulpProject自带一套前端项目代码模板，以便用户参考使用
 
 ```bash
@@ -108,7 +108,7 @@ $ gulpProject create -template=default #目前只有default模板
 $ gulpProject create
 ```
 
-- **2、输出当前项目配置文件**
+- **3.2、输出当前项目配置文件**
 
 ```bash
 $ gulpProject inspect 
