@@ -1,3 +1,7 @@
+/*
+  inspect：用于生成当前gulpProject的配置文件，以便用户检查当前配置是否正确
+ */
+
 const fs = require('fs');
 const path = require('path');
 const formatJson = require('./commonUtils/formatJson.js');

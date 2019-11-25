@@ -15,9 +15,9 @@ const getConfigObj = require('../build/commonUtils/getConfigObj.js');
 const currentServerConfig = getConfigObj(path.resolve(process.cwd(), 'config/server-test-config.js'));
 
 var defaultConfig = {
-  host:    '10.41.41.73', // 默认 '10.210.227.108'
-  user:     'sinas',
-  password: 'sinasports',
+  host: '49.235.6.237', // 腾讯云服务器ip
+  user: 'root',
+  password: '123456789',
   remoteSubDirectory: gulpconfig.base.testSubDirectory,
   port: '21'
 };

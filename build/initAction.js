@@ -1,3 +1,7 @@
+/*
+  gulpProject工程化功能入口模块
+ */
+
 const path = require('path');
 const copy = require('copy');
 // 样式

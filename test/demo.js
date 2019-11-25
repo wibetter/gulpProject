@@ -22,9 +22,9 @@ const plugins = gulpLoadPlugins(),
 
 var conn = ftp.create({
   host: '144.34.184.123',
-  user: 'wibetter',
-  password: '411625795@Ldan',
-  port: '29163',
+  user: 'root',
+  password: 'test',
+  port: '21',
   log: gutil.log
 });
 // 将编译完成的代码上传到开发服务器上

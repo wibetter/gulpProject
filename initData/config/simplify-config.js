@@ -36,14 +36,14 @@ module.exports = {
     html: "/pages/**/*.html",
   },
   ftpConfig: { // 线上测试服务器配置
-    host:     '10.41.41.73', // 默认 '10.210.227.108'
-    user:     'sinas',
-    password: 'sinasports',
+    host: '49.235.6.237', // 腾讯云服务器ip
+    user: 'root',
+    password: '123456789',
     remoteSubDirectory: '/sports/webSystem/#projectName#', // 线上测试环境的项目存放路径，与base.testSubDirectory保持一致,
   },
   deploy: { // 部署相关配置数据
     'msg': '发布#projectName#', // 部署信息
-    'mail': 'liudan6@staff.sina.com.cn' // 邮箱地址，用于接收部署结果
+    'mail': '365533093@qq.com' // 邮箱地址，用于接收部署结果
   },
   operate: {
     compress: true, // 是否压缩js，以便线上调试代码

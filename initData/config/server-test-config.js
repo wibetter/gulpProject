@@ -8,8 +8,8 @@
 const config = require('./gulp-config.js');
 
 module.exports = {
-  host:     '10.41.41.73', // 默认 '10.210.227.108'
-  user:     'sinas',
-  password: 'sinasports',
+  host: '49.235.6.237', // 腾讯云服务器ip
+  user: 'root',
+  password: '123456789',
   remoteSubDirectory: config.base.testSubDirectory,
 };

@@ -58,15 +58,15 @@ const defaultConfig = {
     template: "/template/**/*.html",
   },
   ftpConfig: { // 线上测试服务器配置
-    host: '10.41.41.73', // 默认 '10.210.227.108'
-    user: 'sinas',
-    password: 'sinasports',
+    host: '49.235.6.237', // 腾讯云服务器ip
+    user: 'root',
+    password: '123456789',
     remoteSubDirectory: '/sports/webSystem/gulpProject', // 线上测试环境的项目存放路径，与base.testSubDirectory保持一致,
   },
   deploy: {  // 部署相关配置数据
     msg: '发布gulpProject', // 部署信息
-    mail: 'liudan6@staff.sina.com.cn', // 邮箱地址，用于接收部署结果
-    host: '10.41.41.73', // 默认 '10.210.227.108'
+    mail: '365533093@qq.com', // 邮箱地址，用于接收部署结果
+    host: '49.235.6.237', // 腾讯云服务器ip
     replace: true,
     'no-cache': true,
     maxCount: 300, // 一次上传最大文件数

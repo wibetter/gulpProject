@@ -1,3 +1,7 @@
+/*
+  命令式参数识别
+ */
+
 // 引入全局功能模块
 const figlet = require('figlet');
 const path = require('path');
