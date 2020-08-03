@@ -1,6 +1,6 @@
 {
-  "name": "@wibetter/gulpProject",
-  "version": "1.2.0",
+  "name": "@wibetter/gulp-project",
+  "version": "1.2.2",
   "description": "gulp前端代码工程化管理工具",
   "main": "build/main.js",
   "bin": {

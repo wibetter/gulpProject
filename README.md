@@ -1,11 +1,9 @@
 ## gulpProject: gulp版前端代码工程化管理工具
 1. 适用于requireJs/jQuery/doT...技术栈；
-2. 使用gulpProject实现前端代码工程化，不用花大把时间重构老技术栈项目代码。
-
-笔者留言：本人主要用gulpProject管理requireJs/jQuery等老技术栈的前端项目代码。
+2. 用于实现requireJs/jQuery老技术栈的前端项目工程化；
 
 ### 一、使用方法一：以命令行方式使用gulpProject
-注：此方式可用于同时管理多个前端项目代码
+注：用于同时管理多个前端项目代码
 
 - **1、全局安装**
 
