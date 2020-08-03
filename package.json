@@ -1,5 +1,5 @@
 {
-  "name": "gulpProject",
+  "name": "@wibetter/gulpProject",
   "version": "1.2.0",
   "description": "gulp前端代码工程化管理工具",
   "main": "build/main.js",
