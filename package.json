@@ -20,11 +20,11 @@
     "gulp",
     "前端代码工程化"
   ],
-  "author": "ldan",
+  "author": "ldan@wibetter",
   "engines": {
     "node": ">=8"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
     "del": "^3.0.0",
