@@ -11,7 +11,7 @@
 
 ```bash
 #安装
-$ npm i -g git+ssh://git@github.com:wibetter/gulpProject.git
+$ npm i -g @wibetter/gulpProject
 ```
 
 - **2、初始化项目配置(需要先进入指定项目根目录)**
@@ -57,7 +57,7 @@ $ gulpProject online
 如果准备自建gulpProject的配置文件，可以不用全局安装。
 
 ```bash
-$ npm i -g git+ssh://git@github.com:wibetter/gulpProject.git
+$ npm i -g @wibetter/gulpProject
 ```
 
 - **2.2、初始化项目配置（同方法一）**
@@ -69,7 +69,7 @@ $ gulpProject init -n=yourProjectName
 - **2.3、本地安装**
 
 ```bash
-$ npm i git+ssh://git@github.com:wibetter/gulpProject.git --save-dev
+$ npm i @wibetter/gulpProject --save-dev
 ```
 
 - **2.4、gulpProject提供的本地执行命令**
